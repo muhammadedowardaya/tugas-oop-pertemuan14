@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+        <title>Tugas OOP | Pertemuan 14</title>
+    </head>
+    <body>
+        <header>
+            <section id="title">
+                <h1>
+                    Tugas Mata Kuliah Pemrograman Berorientasi Objek Pertemuan
+                    14
+                </h1>
+            </section>
+            <section id="biodata">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Nama</td>
+                            <td>:</td>
+                            <td>Muhammad Edo Wardaya</td>
+                        </tr>
+                        <tr>
+                            <td>NIM</td>
+                            <td>:</td>
+                            <td>1911010042</td>
+                        </tr>
+                        <tr>
+                            <td>Jurusan</td>
+                            <td>:</td>
+                            <td>Informatika13</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <nav>
+                <ul>
+                    <li><a href="#soal1">Soal 1</a></li>
+                    <li><a href="#soal2">Soal 2</a></li>
+                    <li><a href="#soal3">Soal 3</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="content">
+                <article id="soal1">
+                    <section class="soal">
+                        <h2>Soal 1</h2>
+                        <p>
+                            Buatlah program dengan 2 class, dengan class
+                            PertukaranNilaiData.java menggunakan constructor dan
+                            SET beserta GET dengan Variable sebagai berikut :
+                        </p>
+                        <ul>
+                            <li>private Object dataSatu</li>
+                            <li>private Object dataDua</li>
+                            <li>private Object temp</li>
+                        </ul>
+                        <p>
+                            Buat method yang isi nya variabel yang ditukarkan
+                            sebagai berikut :
+                        </p>
+                        <ul>
+                            <li>temp = dataSatu</li>
+                            <li>dataSatu = dataDua</li>
+                            <li>dataDua = temp</li>
+                        </ul>
+                        <p>Dan buat Class tester sebagai main</p>
+                        <img src="img/soal1.PNG" alt="Output dari soal 1" />
+                    </section>
+                    <section class="jawaban">
+                        <h2>Jawaban :</h2>
+                        <h3>Code PertukaranNilaiData.java</h3>
+                        <pre>
+public class PertukaranNilai {
+    private Object dataSatu;
+    private Object dataDua;
+    private Object temp;
+    
+    public PertukaranNilai(){
+        System.out.println("Pertukaran Nilai");
+    }
+    
+    public void DataSatu(Object value){
+        this.dataSatu = value;
+    }
+    
+    public void DataDua(Object value){
+        this.dataDua = value;
+    }
+    
+    public void result(){
+        temp = dataSatu;
+        dataSatu = dataDua;
+        dataDua = temp;
+        
+        System.out.println("Nilai variabel satu sesudah ditukar " + dataSatu);
+        System.out.println("Nilai variabel dua sesudah ditukar = " + dataDua);
+    }
+    
+}
+
+class Tester {
+    public static void main(String[] args) {
+        PertukaranNilai nilaiSaya = new PertukaranNilai();
+        nilaiSaya.DataSatu(10);
+        nilaiSaya.DataDua(20);
+        nilaiSaya.result();
+        nilaiSaya.DataSatu("Budi");
+        nilaiSaya.DataDua("Sunny");
+        nilaiSaya.result();
+    }
+}
+                        </pre>
+                        <h3>Output PertukaranNilaiData.java</h3>
+                        <img src="img/jawaban/soal1.PNG" alt="" />
+                    </section>
+                </article>
+                <article id="soal2">
+                    <section class="soal">
+                        <h2>Soal 2</h2>
+                        <p>
+                            Buatlah program menu pada java Swing seperti
+                            tampilan sbb :
+                        </p>
+                        <img src="img/soal2.PNG" alt="Output dari soal 2" />
+                    </section>
+                    <section class="jawaban">
+                        <h2>Jawaban :</h2>
+                        <img src="img/jawaban/soal2.PNG" alt="" />
+                    </section>
+                </article>
+                <article id="soal3">
+                    <section class="soal">
+                        <h2>Soal 3</h2>
+                        <p>Buatlah program menggunakan innerclass</p>
+                        <img src="img/soal3.PNG" alt="Output dari soal 3" />
+                    </section>
+                    <section class="jawaban">
+                        <h2>Jawaban :</h2>
+                        <h3>Code dari Class Mobil.java</h3>
+                        <pre>
+class Mobil {
+
+    private final String merk;
+    private final double kecepatan;
+    
+    public Mobil(String nilaiMerk, double nilaiKecepatan){
+        System.out.println("=== DATA DARI CLASS MOBIL ===");
+        this.merk = nilaiMerk;
+        this.kecepatan = nilaiKecepatan;
+        this.cetak();
+    }
+    
+    private void cetak(){
+        System.out.println("Merk Mobil : " + merk);
+        System.out.println("Kecepatan Mobil : " + kecepatan);
+    }
+    
+    class Pengguna {
+        
+        private final String nama;
+        private final int usia;
+        
+        public Pengguna(String nilaiNama, int nilaiUsia) {
+            this.nama = nilaiNama;
+            this.usia = nilaiUsia;
+            System.out.println("=== DATA DARI CLASS PENGGUNA ===");
+            this.cetak();
+        }
+        
+        private void cetak(){
+            System.out.println("Nama Saya : " + nama);
+            System.out.println("Usia Saya : " + usia);
+        }
+    }
+    
+        public static void main(String[] args) {
+        
+        Mobil Suzuki = new Mobil("Suzuki",360.0);
+        Mobil.Pengguna Wildan = Suzuki.new Pengguna("Wildan",19);
+        
+    }
+}
+                        </pre>
+                        <h3>Output dari Class Mobil.java</h3>
+                        <video width="100%" height="auto" controls>
+                            <source src="videos/soal3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video> 
+                    </section>
+                </article>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
