@@ -10,6 +10,7 @@ html {
 body {
     background-color: #204051;
     color: #fff;
+    font-family:'Times New Roman', Times, serif;
 }
 #title {
     text-align: center;
