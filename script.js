@@ -13,3 +13,13 @@ ketik aja manual ehehehe...
         event.preventDefault();
     });
 });
+
+const p = document.querySelectorAll("p");
+p.forEach((p) => {
+    p.addEventListener("copy", (event) => {
+        alert("Ngapain copy paragrafnya, mending code nya aja wkwk");
+        const text = `Kan udah saya bilang _-`;
+        event.clipboardData.setData("text/plain", text);
+        event.preventDefault();
+    });
+});
