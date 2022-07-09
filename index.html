@@ -160,25 +160,25 @@ class Mobil {
         System.out.println("Kecepatan Mobil : " + kecepatan);
     }
     
-    class Pengguna {
-        
-        private final String nama;
-        private final int usia;
-        
-        public Pengguna(String nilaiNama, int nilaiUsia) {
-            this.nama = nilaiNama;
-            this.usia = nilaiUsia;
-            System.out.println("=== DATA DARI CLASS PENGGUNA ===");
-            this.cetak();
+        class Pengguna {
+
+            private final String nama;
+            private final int usia;
+
+            public Pengguna(String nilaiNama, int nilaiUsia) {
+                this.nama = nilaiNama;
+                this.usia = nilaiUsia;
+                System.out.println("=== DATA DARI CLASS PENGGUNA ===");
+                this.cetak();
+            }
+
+            private void cetak(){
+                System.out.println("Nama Saya : " + nama);
+                System.out.println("Usia Saya : " + usia);
+            }
         }
-        
-        private void cetak(){
-            System.out.println("Nama Saya : " + nama);
-            System.out.println("Usia Saya : " + usia);
-        }
-    }
     
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         
         Mobil Suzuki = new Mobil("Suzuki",360.0);
         Mobil.Pengguna Wildan = Suzuki.new Pengguna("Wildan",19);
